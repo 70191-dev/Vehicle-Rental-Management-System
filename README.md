@@ -1,6 +1,6 @@
 # Vehicle Rental Management System
 
-A database project for the **Database Systems** course at The University of Lahore, designed for **Ms. Ambreen Akmal**.
+A database project for the **Database Systems** 
 
 ## Project Overview
 
@@ -71,7 +71,4 @@ psql -d vehiclerentaldb -f sql/03_joins.sql
 ## Course Info
 
 - **Course:** Database Systems
-- **Section:** E
-- **Semester:** 8th (Final Semester, BSCS)
-- **Instructor:** Ms. Ambreen Akmal
-- **Institution:** The University of Lahore
+- **Section:** B
