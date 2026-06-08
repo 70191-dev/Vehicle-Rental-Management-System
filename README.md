@@ -1,63 +1,84 @@
 # Vehicle Rental Management System
 
-A database project for the **Database Systems** 
+A PostgreSQL database project for the **Database Systems** course at **The University of Lahore**, prepared for **Ms. Ambreen Akmal**.
 
 ## Project Overview
 
-This system manages a vehicle rental business — tracking customers, vehicles, bookings, payments, and returns. It supports full rental lifecycle operations from customer registration to vehicle return, including availability checks and revenue reporting.
+The Vehicle Rental Management System (VRMS) manages the full rental lifecycle for a vehicle rental business. It stores customers, vehicles, bookings, payments, and returns, while supporting availability checks, customer rental history, return processing, late fees, and revenue reporting.
 
 ## Repository Structure
 
-```
+```text
 Vehicle-Rental-Management-System/
-├── README.md                          # This file
-├── docs/
-│   ├── 01_Project_Proposal.md         # Task 1: Project proposal
-│   └── 02_ER_Analysis.md              # Task 2: Entities, Attributes, Relationships
-├── diagrams/
-│   ├── ERD.png                        # Task 3a: ERD image
-│   └── EERD.jpeg                      # Task 3b: EERD image
-├── sql/
-│   ├── 01_schema.sql                  # CREATE TABLE statements (MySQL)
-│   ├── 02_sample_data.sql             # INSERT sample data
-│   └── 03_joins.sql                   # Task 6: Join queries with outputs
-└── screenshots/                       # Workbench/CLI screenshots of join results
+|-- README.md
+|-- docs/
+|   |-- 01_Project_Proposal.md
+|   |-- 02_ER_Analysis.md
+|   `-- Project_Documentation.docx
+|-- diagrams/
+|   |-- ERD.png
+|   `-- EERD.jpeg
+|-- sql/
+|   |-- 01_schema.sql
+|   |-- 02_sample_data.sql
+|   |-- 03_joins.sql
+|   `-- 04_features.sql
+`-- screenshots/
+    |-- 1 FEATURES.png
+    |-- 2 FEATURES.png
+    |-- ...
+    |-- 10 FEATURES.png
+    `-- DCL.png
 ```
 
-## Tasks Mapping
+## Deliverables
 
-| Task | Description | File |
-|------|-------------|------|
-| Task 1 | Project proposal | `docs/01_Project_Proposal.md` |
-| Task 2 | Entities, attributes, relationships | `docs/02_ER_Analysis.md` |
-| Task 3a | Construct ERD in standard notation | `diagrams/ERD.png` |
-| Task 3b | Extend to EERD with specialization | `diagrams/EERD.jpeg` |
-| Task 6 | Perform joins on two tables | `sql/03_joins.sql` |
+| Task | Description | File / Folder |
+|------|-------------|---------------|
+| Phase I | Project proposal | `docs/01_Project_Proposal.md` |
+| Phase I | Entities, attributes, and relationships | `docs/02_ER_Analysis.md` |
+| Phase I | ERD and EERD diagrams | `diagrams/` |
+| Phase I | Schema creation | `sql/01_schema.sql` |
+| Phase I | Sample data | `sql/02_sample_data.sql` |
+| Phase I | Join queries | `sql/03_joins.sql` |
+| Phase II | 10 functional SQL features with DDL, DML, and DCL | `sql/04_features.sql` |
+| Phase II | pgAdmin output screenshots | `screenshots/` |
+| Final | Complete project documentation | `docs/Project_Documentation.docx` |
 
-## Tech Stack
+## Phase 2 Features
 
-- **DBMS:** PostgreSQL 15+
-- **Tool:** pgAdmin 4 (Query Tool)
-- **Modeling Tool:** draw.io (diagrams.net)
-- **Notation:** Chen / Elmasri-Navathe (Standard ERD), with EER specialization extensions
+1. Register a new customer
+2. Add a new vehicle to inventory
+3. Create a new booking
+4. Search / filter available vehicles
+5. View customer rental history
+6. Record a payment
+7. Update vehicle status
+8. Process a vehicle return with late fee
+9. Cancel / delete a booking
+10. Generate revenue report by vehicle
 
-## How to Run (in pgAdmin)
+## SQL Command Categories Covered
 
-1. Open **pgAdmin 4** and connect to your local PostgreSQL server
-2. Right-click **Databases** → **Create** → **Database**, name it `vehiclerentaldb`
-3. Click on `vehiclerentaldb` → open **Query Tool** (lightning-bolt icon)
+- **DDL:** `CREATE TABLE`, `ALTER TABLE`, `CREATE VIEW`, `CREATE INDEX`
+- **DML:** `INSERT`, `SELECT`, `UPDATE`, `DELETE`, `JOIN`, `GROUP BY`
+- **DCL:** `CREATE ROLE`, `GRANT`, `REVOKE`
+
+## How to Run in pgAdmin
+
+1. Open **pgAdmin 4** and connect to PostgreSQL.
+2. Create a database named `vehiclerentaldb`.
+3. Open Query Tool for `vehiclerentaldb`.
 4. Run the SQL files in this order:
-   - Open and execute `sql/01_schema.sql`  → creates the 5 tables
-   - Open and execute `sql/02_sample_data.sql`  → inserts sample rows
-   - Open and execute `sql/03_joins.sql`  → runs all 7 join queries
-5. Take screenshots of each query result and put them in `screenshots/`
+   - `sql/01_schema.sql`
+   - `sql/02_sample_data.sql`
+   - `sql/03_joins.sql`
+   - `sql/04_features.sql`
 
-### Alternative: Run from terminal (`psql`)
-```bash
-createdb vehiclerentaldb
-psql -d vehiclerentaldb -f sql/01_schema.sql
-psql -d vehiclerentaldb -f sql/02_sample_data.sql
-psql -d vehiclerentaldb -f sql/03_joins.sql
+If `04_features.sql` is run more than once, the DCL role may already exist. Run this first if needed:
+
+```sql
+DROP ROLE IF EXISTS rental_clerk;
 ```
 
 ## Group Members
@@ -72,3 +93,7 @@ psql -d vehiclerentaldb -f sql/03_joins.sql
 
 - **Course:** Database Systems
 - **Section:** B
+- **Instructor:** Ms. Ambreen Akmal
+- **Institution:** The University of Lahore
+- **DBMS:** PostgreSQL 15+
+- **Tool:** pgAdmin 4
