@@ -14,7 +14,7 @@ Vehicle-Rental-Management-System/
 |-- docs/
 |   |-- 01_Project_Proposal.md
 |   |-- 02_ER_Analysis.md
-|   `-- Project_Documentation.docx
+|   `-- Project_Documentation.pdf
 |-- diagrams/
 |   |-- ERD.png
 |   `-- EERD.jpeg
@@ -43,7 +43,7 @@ Vehicle-Rental-Management-System/
 | Phase I | Join queries | `sql/03_joins.sql` |
 | Phase II | 10 functional SQL features with DDL, DML, and DCL | `sql/04_features.sql` |
 | Phase II | pgAdmin output screenshots | `screenshots/` |
-| Final | Complete project documentation | `docs/Project_Documentation.docx` |
+| Final | Complete project documentation | `docs/Project_Documentation.pdf` |
 
 ## Phase 2 Features
 
